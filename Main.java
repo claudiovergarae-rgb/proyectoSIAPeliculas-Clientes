@@ -1,6 +1,6 @@
 public class Main
 {
-    public void main (String arr[]){
-        
+    public static void main (String arr[]){
+
     }
 }
