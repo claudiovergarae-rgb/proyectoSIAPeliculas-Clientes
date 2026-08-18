@@ -42,10 +42,5 @@ public class Main
             }
         }while(opcion != 0);
 
-
-
-
-
-
     }
 }
