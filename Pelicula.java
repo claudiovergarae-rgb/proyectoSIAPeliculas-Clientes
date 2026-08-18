@@ -33,7 +33,7 @@ public class Pelicula {
             this.disponible = false;
             this.cantPrestamos++;
         } else 
-            System.out.println("La película ya está prestada.");
+            System.out.println("La película ya está prestada."); //Cambiar esto al main si es posible
     }
 
     public void devolver() {
