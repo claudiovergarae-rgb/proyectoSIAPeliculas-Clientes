@@ -12,7 +12,7 @@ public class Main
         System.out.println("0 - Salir");
         System.out.println("1 - Agregar pelicula");
         System.out.printf("Ingrese la opcion a elegir: ");
-        
+
         
         do
         {
@@ -37,8 +37,8 @@ public class Main
                 System.out.printf("Ingrese id: ");
                 idPelicula = Integer.parseInt(lector.readLine());
 
-                new Pelicula(titulo, autor, genero, estrenoYear, idPelicula);
-                catalogo.add(pelicula);
+                Pelicula nuevaPelicula = new Pelicula(titulo, autor, genero, estrenoYear, idPelicula);
+                catalogo.add(nuevaPelicula);
             }
         }while(opcion != 0);
 
