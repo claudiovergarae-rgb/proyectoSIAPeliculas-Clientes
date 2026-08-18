@@ -17,6 +17,9 @@ public class Main
         do
         {
             opcion = Integer.parseInt(lector.readLine());
+
+
+            lector.readLine(); //limpiar buffer
             if(opcion == 1)
             {
                 String titulo, autor, genero;
