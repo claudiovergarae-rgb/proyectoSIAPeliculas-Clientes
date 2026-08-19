@@ -23,7 +23,7 @@ public class Main
             if(opcion == 1)
             {
                 String titulo, autor, genero;
-                int estrenoYear, idPelicula;
+                int estrenoYear, idPelicula, copiasDisponibles;
 
                 System.out.printf("Ingrese titulo: ");
                 titulo = lector.readLine();
@@ -39,8 +39,11 @@ public class Main
 
                 System.out.printf("Ingrese id: ");
                 idPelicula = Integer.parseInt(lector.readLine());
+                
+                System.out.printf("Ingrese cantidad de copias en stock: ");
+                copiasDisponibles = Integer.parseInt(lector.readLine());
 
-                Pelicula nuevaPelicula = new Pelicula(titulo, autor, genero, estrenoYear, idPelicula);
+                Pelicula nuevaPelicula = new Pelicula(titulo, autor, genero, estrenoYear, idPelicula, copiasDisponibles);
                 catalogo.add(nuevaPelicula);
             }
         }while(opcion != 0);

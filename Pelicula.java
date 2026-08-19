@@ -6,7 +6,7 @@ public class Pelicula {
     private int estrenoYear;
     private int idPelicula;
     private int cantPrestamos;
-    private boolean disponible;
+    private int copiasDisponibles;
 
     public Pelicula() {
         this.titulo = "";
@@ -15,29 +15,34 @@ public class Pelicula {
         this.estrenoYear = 0;
         this.idPelicula = 0;
         this.cantPrestamos = 0;
-        this.disponible = false;
+        this.copiasDisponibles = 0;
     }
 
-    public Pelicula(String titulo, String autor, String genero, int estrenoYear, int idPelicula) {
+    public Pelicula(String titulo, String autor, String genero, int estrenoYear, int idPelicula, int copiasDisponibles) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.estrenoYear = estrenoYear;
         this.idPelicula = idPelicula;
         this.cantPrestamos = 0;
-        this.disponible = true;
+        this.copiasDisponibles = copiasDisponibles;
     }
 
-    public void prestar() {
-        if (disponible) {
-            this.disponible = false;
-            this.cantPrestamos++;
-        } else 
-            System.out.println("La película ya está prestada."); //Cambiar esto al main si es posible
-    }
+    public boolean prestar() {
+        if (copiasDisponibles > 0) {
+            copiasDisponibles --;
+            cantPrestamos++;
+            return true;
 
+        } else {
+            System.out.println("No hay copias disponibles."); //Cambiar esto al main si es posible
+            return false;
+
+        }
+    }
     public void devolver() {
         this.disponible = true;
+        this.copiasDisponibles ++;
     }
 
 
@@ -88,7 +93,11 @@ public class Pelicula {
         return cantPrestamos;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public int getCopiasDisponibles() {
+        return copiasDisponibles;
+    }
+
+    public void setCopiasDisponibles(int copiasDisponibles) {
+        this.copiasDisponibles = copiasDisponibles;
     }
 }

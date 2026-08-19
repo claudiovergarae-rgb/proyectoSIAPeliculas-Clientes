@@ -38,9 +38,11 @@ public class Cliente
 
     public void pedirPelicula(Pelicula pelicula)
     {
-        if(aptoPrestamos && peliculasEnPosesion.size() < maximoPeliculas)
-            peliculasEnPosesion.add(pelicula);
-        
+        if(aptoPrestamos && peliculasEnPosesion.size() < maximoPeliculas){
+            if(pelicula.prestar())
+                peliculasEnPosesion.add(pelicula);
+            
+        }
         else System.out.println("Cliente no apto para pedir");
     }
 
