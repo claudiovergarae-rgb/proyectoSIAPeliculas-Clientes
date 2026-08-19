@@ -19,6 +19,7 @@ public class Main
             opcion = Integer.parseInt(lector.readLine());
 
 
+
             lector.readLine(); //limpiar buffer
             if(opcion == 1)
             {

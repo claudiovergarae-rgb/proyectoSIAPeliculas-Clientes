@@ -47,6 +47,7 @@ public class Pelicula {
 
 
     
+    
     //getter y setters
 
     public String getTitulo() {

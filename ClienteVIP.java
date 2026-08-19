@@ -10,6 +10,7 @@ public class ClienteVIP extends Cliente
         montoSuscripcion = 0;
         abonoSuscripcion = 0;
     } 
+
     
 
 }

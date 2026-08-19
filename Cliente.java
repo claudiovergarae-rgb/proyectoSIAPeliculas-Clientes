@@ -36,6 +36,7 @@ public class Cliente
         aptoPrestamos = true;
     }
 
+
     public void pedirPelicula(Pelicula pelicula)
     {
         if(aptoPrestamos && peliculasEnPosesion.size() < maximoPeliculas){
