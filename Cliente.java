@@ -8,6 +8,7 @@ public class Cliente
     private int cantAtrasos;
     private double multaAcumulada;
     private ArrayList<Pelicula> peliculasEnPosesion;
+    private int maximoPeliculas;
     private boolean aptoPrestamos;
 
 
@@ -19,6 +20,7 @@ public class Cliente
         cantAtrasos = 0;
         multaAcumulada = 0;
         peliculasEnPosesion = new ArrayList<>();
+        maximoPeliculas = 3;
         aptoPrestamos = true;
     }
 
@@ -30,12 +32,13 @@ public class Cliente
         cantAtrasos = 0;
         multaAcumulada = 0;
         peliculasEnPosesion = new ArrayList<>();
+        maximoPeliculas = 3;
         aptoPrestamos = true;
     }
 
     public void pedirPelicula(Pelicula pelicula)
     {
-        if(aptoPrestamos)
+        if(aptoPrestamos && peliculasEnPosesion.size() < maximoPeliculas)
             peliculasEnPosesion.add(pelicula);
         
         else System.out.println("Cliente no apto para pedir");
@@ -85,6 +88,14 @@ public class Cliente
 
     public void setCantAtrasos(int cantAtrasos){
         this.cantAtrasos = cantAtrasos;
+    }
+
+    public int getMaximoPeliculas(){
+        return maximoPeliculas;
+    }
+
+    public void setMaximoPeliculas(int maximoPeliculas){
+        this.maximoPeliculas = maximoPeliculas;
     }
 
     public double getMultaAcumulada(){
