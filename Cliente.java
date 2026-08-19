@@ -53,7 +53,7 @@ public class Cliente
         if (peliculasEnPosesion.remove(pelicula))
             pelicula.devolver();
         else
-            System.out.println("El cliente no tenía la película");
+            System.out.println("El cliente no tenia la pelicula");
     }
 
     //getter y setters
