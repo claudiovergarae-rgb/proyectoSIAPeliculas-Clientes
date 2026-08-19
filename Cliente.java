@@ -8,7 +8,7 @@ public class Cliente
     private int cantAtrasos;
     private double multaAcumulada;
     private ArrayList<Pelicula> peliculasEnPosesion;
-    private int maximoPeliculas;
+    private int maximoPeliculas; // por defecto 3
     private boolean aptoPrestamos;
 
 
