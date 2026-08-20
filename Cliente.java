@@ -1,9 +1,7 @@
 import java.util.*;
 
-public class Cliente
+public class Cliente extends Persona
 {
-    private String nombre;
-    private String rut;
     private int cantPedidos;
     private int cantAtrasos;
     private double multaAcumulada;
@@ -14,8 +12,7 @@ public class Cliente
 
     public Cliente()
     {
-        nombre = "";
-        rut = "";
+        super();
         cantPedidos = 0;
         cantAtrasos = 0;
         multaAcumulada = 0;
@@ -24,10 +21,9 @@ public class Cliente
         aptoPrestamos = true;
     }
 
-    public Cliente(String nombre, String rut)
+    public Cliente(String nombre, String rut, int edad)
     {
-        this.nombre = nombre;
-        this.rut = rut;
+        super(nombre, rut, edad);
         cantPedidos = 0;
         cantAtrasos = 0;
         multaAcumulada = 0;
@@ -58,24 +54,6 @@ public class Cliente
 
     //getter y setters
 
-    public String getNombre()
-    {
-        return nombre;
-    } 
-
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-
-    public String getRut()
-    {
-        return rut;
-    }
-
-    public void setRut(String rut){
-        //en caso de errores de tipeo, aunque no se si dejarlo
-        this.rut = rut;
-    }
 
     public int getCantPedidos(){
         return cantPedidos;

@@ -41,8 +41,7 @@ public class Pelicula {
         }
     }
     public void devolver() {
-        this.disponible = true;
-        this.copiasDisponibles ++;
+        copiasDisponibles ++;
     }
 
 
