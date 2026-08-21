@@ -10,6 +10,8 @@ public class Cliente extends Persona
     private boolean aptoPrestamos;
 
 
+    //constructores
+
     public Cliente()
     {
         super();
@@ -33,6 +35,8 @@ public class Cliente extends Persona
     }
 
 
+    //metodos
+
     public void pedirPelicula(Pelicula pelicula)
     {
         if(aptoPrestamos && peliculasEnPosesion.size() < maximoPeliculas){
@@ -40,7 +44,7 @@ public class Cliente extends Persona
                 peliculasEnPosesion.add(pelicula);
             
         }
-        else System.out.println("Cliente no apto para pedir");
+        else System.out.println("Cliente puede pedir");
     }
 
 
@@ -52,8 +56,29 @@ public class Cliente extends Persona
             System.out.println("El cliente no tenia la pelicula");
     }
 
-    //getter y setters
 
+    @Override //buena practica para sobreescribir cualquier metodo
+    public void identificarse()
+    {
+        if(!rut.isEmpty() && rut != null)
+        {
+            System.out.println("Rol: Cliente");
+            System.out.println("Nombre: "+nombre);
+            System.out.println("Rut: "+rut);
+            System.out.println("Cantidad de peliculas en posesion: "+peliculasEnPosesion.size());
+            if(aptoPrestamos){
+                System.out.println("El cliente puede pedir peliculas");
+            }else{
+                System.out.println("El cliente NO puede pedir peliculas");
+            }
+            System.out.println("Multa actual: $"+multaAcumulada);
+
+        }
+    }
+
+
+
+    //getter y setters
 
     public int getCantPedidos(){
         return cantPedidos;
