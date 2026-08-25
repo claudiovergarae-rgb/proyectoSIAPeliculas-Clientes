@@ -128,10 +128,10 @@ public class Main
     }
 
     public static Pelicula busquedaBinariaPeliculas(ArrayList<Pelicula> catalogo, int idBuscada) {
-        int p = 0, u = 9, i;
+        int p = 0, u = catalogo.size()-1, i;
         Pelicula enc = null;
         
-        while ((p<=u)&&(!enc)) {
+        while ((p<=u)&&(enc == null)) {
             i=(p+u)/2;
             if (catalogo.get(i).getIdPelicula() == idBuscada) enc = catalogo.get(i);
             else {
