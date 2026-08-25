@@ -44,16 +44,26 @@ public class Cliente extends Persona
                 peliculasEnPosesion.add(pelicula);
             
         }
-        else System.out.println("Cliente puede pedir");
+        else System.out.println("Cliente no puede pedir.");
     }
 
 
     public void clienteDevolver(Pelicula pelicula)
     {
         if (peliculasEnPosesion.remove(pelicula))
+            if (pelicula.isAtrasado)
+                pelicula.setAtrasado(false);
             pelicula.devolver();
         else
-            System.out.println("El cliente no tenia la pelicula");
+            System.out.println("El cliente no tenia la pelicula.");
+    }
+
+    public void clientePagar(Pelicula pelicula)
+    {
+        if (pelicula.isAtrasado && multaAcumulada >= 1000)
+            multaAcumulada -= 1000;
+        else
+            System.out.println("El cliente no debe multas.");
     }
 
 

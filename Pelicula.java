@@ -7,15 +7,17 @@ public class Pelicula {
     private int idPelicula;
     private int cantPrestamos;
     private int copiasDisponibles;
+    private boolean atrasado;
 
     public Pelicula() {
-        this.titulo = "";
-        this.autor = "";
-        this.genero = "";
-        this.estrenoYear = 0;
-        this.idPelicula = 0;
-        this.cantPrestamos = 0;
-        this.copiasDisponibles = 0;
+        titulo = "";
+        autor = "";
+        genero = "";
+        estrenoYear = 0;
+        idPelicula = 0;
+        cantPrestamos = 0;
+        copiasDisponibles = 0;
+        atrasado = false
     }
 
     public Pelicula(String titulo, String autor, String genero, int estrenoYear, int idPelicula, int copiasDisponibles) {
@@ -24,8 +26,9 @@ public class Pelicula {
         this.genero = genero;
         this.estrenoYear = estrenoYear;
         this.idPelicula = idPelicula;
-        this.cantPrestamos = 0;
+        cantPrestamos = 0;
         this.copiasDisponibles = copiasDisponibles;
+        atrasado = false
     }
 
     public boolean prestar() {
@@ -100,4 +103,14 @@ public class Pelicula {
     public void setCopiasDisponibles(int copiasDisponibles) {
         this.copiasDisponibles = copiasDisponibles;
     }
+
+    public void setAtrasado(boolean atrasado){
+        this.atrasado = atrasado;
+    }
+
+    public boolean isAtrasado()
+    {
+        return atrasado;
+    }
+
 }
