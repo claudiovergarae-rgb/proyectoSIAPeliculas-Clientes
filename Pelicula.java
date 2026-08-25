@@ -17,7 +17,7 @@ public class Pelicula {
         idPelicula = 0;
         cantPrestamos = 0;
         copiasDisponibles = 0;
-        atrasado = false
+        atrasado = false;
     }
 
     public Pelicula(String titulo, String autor, String genero, int estrenoYear, int idPelicula, int copiasDisponibles) {
@@ -28,7 +28,7 @@ public class Pelicula {
         this.idPelicula = idPelicula;
         cantPrestamos = 0;
         this.copiasDisponibles = copiasDisponibles;
-        atrasado = false
+        atrasado = false;
     }
 
     public boolean prestar() {
