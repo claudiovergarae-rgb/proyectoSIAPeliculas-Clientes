@@ -135,7 +135,7 @@ public class Main
             i=(p+u)/2;
             if (catalogo.get(i).getIdPelicula() == idBuscada) enc = catalogo.get(i);
             else {
-                if (catalogo.get(i).getIdPelicula()>idBuscada) u=c-1;
+                if (catalogo.get(i).getIdPelicula()>idBuscada) u=i-1;
                 else p=i+1;
             }
         }
