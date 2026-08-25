@@ -13,8 +13,8 @@ public class Main
         {
 
             System.out.println("0 - Salir");
-            System.out.println("1 - Menu clientes");
-            System.out.println("2 - Menu peliculas");
+            System.out.println("1 - Menu peliculas");
+            System.out.println("2 - Menu clientes");
             System.out.printf("Ingrese la opcion a elegir: ");
 
             opcion = Integer.parseInt(lector.readLine());
