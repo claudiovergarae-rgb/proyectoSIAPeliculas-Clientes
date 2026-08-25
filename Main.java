@@ -133,16 +133,16 @@ public class Main
         
         while ((p<=u)&&(enc == null)) {
             i=(p+u)/2;
-            if (catalogo.get(i).getIdPelicula() == idBuscada) enc = catalogo.get(i);
+            int idActual = catalogo.get(i).getIdPelicula();
+            if (idActual == idBuscada) enc = catalogo.get(i);
             else {
-                if (catalogo.get(i).getIdPelicula()>idBuscada) u=i-1;
-                else p=i+1;
+                if (idActual > idBuscada) u = i-1;
+                else p = i+1;
             }
         }
-        if (enc) return enc;
-        
-        else return null;
+        return enc;
     }
 
+        
 
 }
