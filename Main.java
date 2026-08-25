@@ -121,7 +121,7 @@ public class Main
                     Pelicula act = catalogo.get(i);
                     System.out.println("\n_________________________\n");
                     
-                    System.out.println("Genero: "+act.getIdPelicula());
+                    System.out.println("ID: "+act.getIdPelicula());
                     System.out.println("Titulo: "+act.getTitulo());
                     System.out.println("Año: "+act.getEstrenoYear());
                     System.out.println("Genero: "+act.getGenero());
