@@ -42,6 +42,8 @@ public class Main
         QUITAR
         MOSTRAR
          */
+        System.out.println("Metodo vacio...");
+
     }
 
     public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) {
@@ -111,7 +113,25 @@ public class Main
                         System.out.println("Saliendo...");
                     }
 
-                }else System.out.println("La pelicula no existe");
+                }
+                else if(opcion == 3)
+                {
+                    for(int i = 0 ; i < catalogo.size() ; i++)
+                    {
+                        Pelicula act = catalogo.get(i);
+                        System.out.println("_________________________\n");
+                        
+                        System.out.println("Titulo: "+act.titulo);
+                        System.out.println("Año: "+act.estrenoYear);
+                        System.out.println("Genero: "+act.genero);
+                        System.out.println("Copias disponibles: "+act.copiasDisponibles);
+
+                        System.out.println("_________________________\n");
+
+                    }
+                }
+                
+                else System.out.println("Opcion invalida");
             }
 
         }while(opcion != 0);
