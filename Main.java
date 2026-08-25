@@ -6,21 +6,58 @@ public class Main
     public static void main (String arr[]) throws IOException {
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Pelicula> catalogo = new ArrayList<>();
+        ArrayList<Cliente> clientes = new ArrayList<>();
         int opcion;
 
-
-        System.out.println("0 - Salir");
-        System.out.println("1 - Agregar pelicula");
-        System.out.printf("Ingrese la opcion a elegir: ");
-
-        
         do
         {
+
+            System.out.println("0 - Salir");
+            System.out.println("1 - Menu clientes");
+            System.out.println("2 - Menu peliculas");
+            System.out.printf("Ingrese la opcion a elegir: ");
+
             opcion = Integer.parseInt(lector.readLine());
 
+            switch(opcion);
+            case 1:
+                menuPelicula(lector, catalogo);
+                break;
+            case 2:
+                menuCliente(lector, clientes);
+                break;
+            case 0:
+                System.out.println("Saliendo...");
+                break;
+            case default:
+                System.out.println("Opcion invalida");
+            
+        }while(opcion != 0);
 
+    }
 
-            lector.readLine(); //limpiar buffer
+    public static void menuCliente (BufferedReader lector, ArrayList<Cliente> clientes) {
+        /* 
+        AGREGAR
+        QUITAR
+        MOSTRAR
+         */
+    }
+
+    public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) {
+
+        int opcion;
+
+        do
+        {
+            System.out.println("0 - Salir");
+            System.out.println("1 - Agregar pelicula");
+            System.out.println("2 - Quitar pelicula");
+            System.out.println("3 - Mostrar peliculas");
+            System.out.printf("Ingrese la opcion a elegir: ");
+
+            opcion = Integer.parseInt(lector.readLine());
+
             if(opcion == 1)
             {
                 String titulo, autor, genero;
@@ -46,8 +83,11 @@ public class Main
 
                 Pelicula nuevaPelicula = new Pelicula(titulo, autor, genero, estrenoYear, idPelicula, copiasDisponibles);
                 catalogo.add(nuevaPelicula);
-            }
-        }while(opcion != 0);
 
+                menuPelicula(lector, catalogo);
+            }
+
+        }while(opcion != 0);
+        
     }
 }
