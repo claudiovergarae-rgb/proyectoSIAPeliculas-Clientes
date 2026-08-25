@@ -119,14 +119,14 @@ public class Main
                 for(int i = 0 ; i < catalogo.size() ; i++)
                 {
                     Pelicula act = catalogo.get(i);
-                    System.out.println("_________________________\n");
+                    System.out.println("\n_________________________\n");
                     
+                    System.out.println("Genero: "+act.getIdPelicula());
                     System.out.println("Titulo: "+act.getTitulo());
                     System.out.println("Año: "+act.getEstrenoYear());
                     System.out.println("Genero: "+act.getGenero());
                     System.out.println("Copias disponibles: "+act.getCopiasDisponibles());
 
-                    System.out.println("_________________________\n");
 
                 }
             }
