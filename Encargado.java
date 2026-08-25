@@ -30,8 +30,8 @@ public class Encargado extends Persona
         if(!idEmpleado.isEmpty() && idEmpleado != null)
         {
             System.out.println("Rol: Encargado");
-            System.out.println("Nombre: "+nombre);
-            System.out.println("Rut: "+rut);
+            System.out.println("Nombre: "+getNombre());
+            System.out.println("Rut: "+getRut());
             System.out.println("ID de empleado: "+idEmpleado);
             System.out.println("Turno: "+turno);
             System.out.println("Sueldo: $"+sueldoBase);

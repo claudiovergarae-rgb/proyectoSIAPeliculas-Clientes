@@ -19,24 +19,24 @@ public class Main
 
             opcion = Integer.parseInt(lector.readLine());
 
-            switch(opcion);
-            case 1:
-                menuPelicula(lector, arrayListCatalogo);
-                break;
-            case 2:
-                menuCliente(lector, mapaClientes);
-                break;
-            case 0:
-                System.out.println("Saliendo...");
-                break;
-            case default:
-                System.out.println("Opcion invalida");
-            
+            switch(opcion){
+                case 1:
+                    menuPelicula(lector, arrayListCatalogo);
+                    break;
+                case 2:
+                    menuCliente(lector, mapaClientes);
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+            }
         }while(opcion != 0);
 
     }
 
-    public static void menuCliente (BufferedReader lector, HashMap<String,Cliente> clientes) {
+    public static void menuCliente (BufferedReader lector, HashMap<String,Cliente> clientes) throws IOException {
         /* 
         AGREGAR
         QUITAR
@@ -46,7 +46,7 @@ public class Main
 
     }
 
-    public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) {
+    public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) throws IOException {
 
         int opcion;
 
@@ -121,10 +121,10 @@ public class Main
                         Pelicula act = catalogo.get(i);
                         System.out.println("_________________________\n");
                         
-                        System.out.println("Titulo: "+act.titulo);
-                        System.out.println("Año: "+act.estrenoYear);
-                        System.out.println("Genero: "+act.genero);
-                        System.out.println("Copias disponibles: "+act.copiasDisponibles);
+                        System.out.println("Titulo: "+act.getTitulo());
+                        System.out.println("Año: "+act.getEstrenoYear());
+                        System.out.println("Genero: "+act.getGenero());
+                        System.out.println("Copias disponibles: "+act.getCopiasDisponibles());
 
                         System.out.println("_________________________\n");
 

@@ -51,16 +51,18 @@ public class Cliente extends Persona
     public void clienteDevolver(Pelicula pelicula)
     {
         if (peliculasEnPosesion.remove(pelicula))
-            if (pelicula.isAtrasado)
+        {
+            if (pelicula.isAtrasado())
                 pelicula.setAtrasado(false);
             pelicula.devolver();
+        }
         else
             System.out.println("El cliente no tenia la pelicula.");
     }
 
     public void clientePagar(Pelicula pelicula)
     {
-        if (pelicula.isAtrasado && multaAcumulada >= 1000)
+        if (pelicula.isAtrasado() && multaAcumulada >= 1000)
             multaAcumulada -= 1000;
         else
             System.out.println("El cliente no debe multas.");
@@ -70,10 +72,11 @@ public class Cliente extends Persona
     @Override //buena practica para sobreescribir cualquier metodo
     public void identificarse()
     {
+        String rut = getRut();
         if(!rut.isEmpty() && rut != null)
         {
             System.out.println("Rol: Cliente");
-            System.out.println("Nombre: "+nombre);
+            System.out.println("Nombre: "+getNombre());
             System.out.println("Rut: "+rut);
             System.out.println("Cantidad de peliculas en posesion: "+peliculasEnPosesion.size());
             if(aptoPrestamos){
