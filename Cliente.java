@@ -58,12 +58,21 @@ public class Cliente extends Persona
             System.out.println("El cliente no tenia la pelicula.");
     }
 
-    public void clientePagar(Pelicula pelicula)
+    public double clientePagar(double montoPagar) //retorna el vuelto a darle al cliente
     {
-        if (pelicula.isAtrasado() && multaAcumulada >= 1000)
-            multaAcumulada -= 1000;
-        else
+        if(multaAcumulada == 0){
             System.out.println("El cliente no debe multas.");
+            return montoPagar;
+        }else if(montoPagar >= multaAcumulada)
+        {
+            double vuelto = montoPagar - multaAcumulada;
+            multaAcumulada = 0;
+            return vuelto;
+        }else
+        {
+            multaAcumulada -= montoPagar;
+            return 0;
+        }
     }
 
 
