@@ -15,6 +15,7 @@ public class Main
             System.out.println("0 - Salir");
             System.out.println("1 - Menu peliculas");
             System.out.println("2 - Menu clientes");
+            System.out.println("3 - Menu empleados");
             System.out.printf("Ingrese la opcion a elegir: ");
 
             opcion = Integer.parseInt(lector.readLine());
@@ -26,6 +27,9 @@ public class Main
                 case 2:
                     menuCliente(lector, mapaClientes);
                     break;
+                case 3:
+                    System.out.println("Aun no implementado");
+                    break;
                 case 0:
                     System.out.println("Saliendo...");
                     break;
@@ -36,14 +40,93 @@ public class Main
 
     }
 
-    public static void menuCliente (BufferedReader lector, HashMap<String,Cliente> clientes) throws IOException {
+    public static void menuCliente (BufferedReader lector, HashMap<String,Cliente> mapaClientes) throws IOException {
         /* 
         AGREGAR
         QUITAR
         MOSTRAR
          */
-        System.out.println("Metodo vacio...");
 
+        int opcion;
+
+        do
+        {
+
+            System.out.println("0 - Salir");
+            System.out.println("1 - Agregar cliente");
+            System.out.println("2 - Quitar cliente");
+            System.out.println("3 - Mostrar cliente");
+            System.out.printf("Ingrese la opcion a elegir: ");
+
+            opcion = Integer.parseInt(lector.readLine());
+
+
+            switch(opcion){
+
+                case 1:
+                    String nombre, rut;
+                    int edad;
+
+                    System.out.printf("Ingrese nombre: ");
+                    nombre = lector.readLine();
+
+                    System.out.printf("Ingrese rut: ");
+                    rut = lector.readLine();
+
+                    System.out.printf("Ingrese edad: ");
+                    edad = Integer.parseInt(lector.readLine());
+
+                    Cliente nuevoCliente = new Cliente(nombre, rut, edad);
+                    mapaClientes.put(rut, nuevoCliente);
+
+                    break;
+
+                case 2:
+                    String rut;
+
+                    System.out.printf("Ingrese rut: ");
+                    rut = lector.readLine();
+
+                    if(mapaClientes.containsKey(rut))
+                    {
+                        mapaClientes.remove(rut);
+                        System.out.println("Cliente eliminado");
+                        
+                    }else System.out.println("Cliente no existe");
+                    break;
+
+                case 3:
+                    String rut;
+
+                    System.out.printf("Ingrese rut: ");
+                    rut = lector.readLine();
+
+                    if(mapaClientes.containsKey(rut))
+                    {
+                        Cliente mostrar = mapaClientes.get(rut);
+
+                        System.out.println("\nNombre: "+mostrar.getNombre());
+                        System.out.println("Rut: "+mostrar.getRut());
+                        System.out.println("Cantidad atrasos: "+mostrar.getCantAtrasos());
+                        if(mostrar.isAptoPrestamos()) System.out.println("Cliente apto para prestamos");
+                        else System.out.println("Cliente NO apto para prestamos");
+                        System.out.println("Multa actual: "+mostrar.getMultaAcumulada());
+                        System.out.println();
+
+                        
+                    }else System.out.println("Cliente no existe");
+                    break;
+
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opcion invalida");
+            }
+
+        }while(opcion != 0);
+        
     }
 
     public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) throws IOException {
@@ -55,7 +138,7 @@ public class Main
             System.out.println("0 - Salir");
             System.out.println("1 - Agregar pelicula");
             System.out.println("2 - Quitar pelicula");
-            System.out.println("3 - Mostrar peliculas");
+            System.out.println("3 - Mostrar catalogo");
             System.out.printf("Ingrese la opcion a elegir: ");
 
             opcion = Integer.parseInt(lector.readLine());
@@ -116,10 +199,12 @@ public class Main
             }
             else if(opcion == 3)
             {
+
+                System.out.println("\n_________________________\n");
+
                 for(int i = 0 ; i < catalogo.size() ; i++)
                 {
                     Pelicula act = catalogo.get(i);
-                    System.out.println("\n_________________________\n");
                     
                     System.out.println("ID: "+act.getIdPelicula());
                     System.out.println("Titulo: "+act.getTitulo());
@@ -127,6 +212,7 @@ public class Main
                     System.out.println("Genero: "+act.getGenero());
                     System.out.println("Copias disponibles: "+act.getCopiasDisponibles());
 
+                    System.out.println("\n_________________________\n");
 
                 }
             }
