@@ -52,8 +52,6 @@ public class Cliente extends Persona
     {
         if (peliculasEnPosesion.remove(pelicula))
         {
-            if (pelicula.isAtrasado())
-                pelicula.setAtrasado(false);
             pelicula.devolver();
         }
         else

@@ -56,6 +56,7 @@ public class Main
             System.out.println("1 - Agregar cliente");
             System.out.println("2 - Quitar cliente");
             System.out.println("3 - Mostrar cliente");
+            System.out.println("4 - Acciones cliente");
             System.out.printf("Ingrese la opcion a elegir: ");
 
             opcion = Integer.parseInt(lector.readLine());
@@ -116,6 +117,12 @@ public class Main
                         
                     }else System.out.println("Cliente no existe");
                     break;
+                
+                case 4:
+
+                    accionesCliente(lector, mapaClientes);
+                    
+                    break;
 
                 case 0:
                     System.out.println("Saliendo...");
@@ -127,6 +134,43 @@ public class Main
 
         }while(opcion != 0);
         
+    }
+
+    public static void accionesCliente(BufferedReader lector, HashMap<String,Cliente> mapaClientes) throws IOException
+    {
+        int opcion;
+
+        do
+        {
+            System.out.println("0 - Salir");
+            System.out.println("1 - Prestar pelicula");
+            System.out.println("2 - Recibir pelicula");
+            System.out.println("3 - ");
+            System.out.printf("Ingrese la opcion a elegir: ");
+
+            opcion = Integer.parseInt(lector.readLine());
+
+            switch(opcion){
+                case 1:
+
+                    System.out.println("Aun no implementado");
+
+                    // pedirPelicula();
+                    break;
+                case 2:
+                    System.out.println("Aun no implementado");
+                    break;
+                case 3:
+                    System.out.println("Aun no implementado");
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+            }
+        }while(opcion != 0);
+
     }
 
     public static void menuPelicula (BufferedReader lector, ArrayList<Pelicula> catalogo) throws IOException {

@@ -6,8 +6,7 @@ public class Pelicula {
     private int estrenoYear;
     private int idPelicula;
     private int cantPrestamos;
-    private int copiasDisponibles;
-    private boolean atrasado;
+    private int copiasDisponibles; //funciona como validador de si se puede prestar la pelicula, no importa si la pelicula esta atrasada (en todo, eso importaria del cliente)
 
     public Pelicula() {
         titulo = "";
@@ -17,7 +16,6 @@ public class Pelicula {
         idPelicula = 0;
         cantPrestamos = 0;
         copiasDisponibles = 0;
-        atrasado = false;
     }
 
     public Pelicula(String titulo, String autor, String genero, int estrenoYear, int idPelicula, int copiasDisponibles) {
@@ -28,7 +26,6 @@ public class Pelicula {
         this.idPelicula = idPelicula;
         cantPrestamos = 0;
         this.copiasDisponibles = copiasDisponibles;
-        atrasado = false;
     }
 
     public boolean prestar() {
@@ -102,15 +99,6 @@ public class Pelicula {
 
     public void setCopiasDisponibles(int copiasDisponibles) {
         this.copiasDisponibles = copiasDisponibles;
-    }
-
-    public void setAtrasado(boolean atrasado){
-        this.atrasado = atrasado;
-    }
-
-    public boolean isAtrasado()
-    {
-        return atrasado;
     }
 
 }
