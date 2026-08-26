@@ -84,7 +84,7 @@ public class Cliente extends Persona
     {
         System.out.println("\nRol: Cliente");
         System.out.println("Nombre: "+getNombre());
-        System.out.println("Rut: "+rut);
+        System.out.println("Rut: "+getRut());
         System.out.println("Cantidad de peliculas en posesion: "+peliculasEnPosesion.size());
         if(aptoPrestamos){
             System.out.println("El cliente puede pedir peliculas");
