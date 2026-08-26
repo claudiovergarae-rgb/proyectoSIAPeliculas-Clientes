@@ -83,7 +83,6 @@ public class Main
                     break;
 
                 case 2:
-                    String rut;
 
                     System.out.printf("Ingrese rut: ");
                     rut = lector.readLine();
@@ -97,7 +96,6 @@ public class Main
                     break;
 
                 case 3:
-                    String rut;
 
                     System.out.printf("Ingrese rut: ");
                     rut = lector.readLine();
