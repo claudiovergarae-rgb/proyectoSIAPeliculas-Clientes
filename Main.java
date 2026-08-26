@@ -104,13 +104,7 @@ public class Main
                     {
                         Cliente mostrar = mapaClientes.get(rut);
 
-                        System.out.println("\nNombre: "+mostrar.getNombre());
-                        System.out.println("Rut: "+mostrar.getRut());
-                        System.out.println("Cantidad atrasos: "+mostrar.getCantAtrasos());
-                        if(mostrar.isAptoPrestamos()) System.out.println("Cliente apto para prestamos");
-                        else System.out.println("Cliente NO apto para prestamos");
-                        System.out.println("Multa actual: "+mostrar.getMultaAcumulada());
-                        System.out.println();
+                        mostrar.identificarse();
 
                         
                     }else System.out.println("Cliente no existe");

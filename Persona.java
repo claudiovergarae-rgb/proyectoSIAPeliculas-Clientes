@@ -6,7 +6,6 @@ entonces, se restringe la creacion de personas con un new Persona (eso queda en 
 {
     private String nombre;
     private String rut;
-    private int edad;
 
 // constructores
 
@@ -14,14 +13,12 @@ entonces, se restringe la creacion de personas con un new Persona (eso queda en 
     {
         nombre = "";
         rut = "";
-        edad = 0;
     }
 
-    public Persona(String nombre, String rut, int edad)
+    public Persona(String nombre, String rut)
     {
         this.nombre = nombre;
         this.rut = rut;
-        this.edad = edad;
     }
 
 //metodos

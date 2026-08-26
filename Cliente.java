@@ -4,6 +4,7 @@ public class Cliente extends Persona
 {
     private int cantPedidos;
     private int cantAtrasos;
+    private int edad;
     private double multaAcumulada;
     private ArrayList<Pelicula> peliculasEnPosesion;
     private int maximoPeliculas; // por defecto 3
@@ -17,6 +18,7 @@ public class Cliente extends Persona
         super();
         cantPedidos = 0;
         cantAtrasos = 0;
+        edad = 0;
         multaAcumulada = 0;
         peliculasEnPosesion = new ArrayList<>();
         maximoPeliculas = 3;
@@ -25,7 +27,8 @@ public class Cliente extends Persona
 
     public Cliente(String nombre, String rut, int edad)
     {
-        super(nombre, rut, edad);
+        super(nombre, rut);
+        this.edad = edad;
         cantPedidos = 0;
         cantAtrasos = 0;
         multaAcumulada = 0;
@@ -79,21 +82,19 @@ public class Cliente extends Persona
     @Override //buena practica para sobreescribir cualquier metodo
     public void identificarse()
     {
-        String rut = getRut();
-        if(!rut.isEmpty() && rut != null)
-        {
-            System.out.println("Rol: Cliente");
-            System.out.println("Nombre: "+getNombre());
-            System.out.println("Rut: "+rut);
-            System.out.println("Cantidad de peliculas en posesion: "+peliculasEnPosesion.size());
-            if(aptoPrestamos){
-                System.out.println("El cliente puede pedir peliculas");
-            }else{
-                System.out.println("El cliente NO puede pedir peliculas");
-            }
-            System.out.println("Multa actual: $"+multaAcumulada);
-
+        System.out.println("\nRol: Cliente");
+        System.out.println("Nombre: "+getNombre());
+        System.out.println("Rut: "+rut);
+        System.out.println("Cantidad de peliculas en posesion: "+peliculasEnPosesion.size());
+        if(aptoPrestamos){
+            System.out.println("El cliente puede pedir peliculas");
+        }else{
+            System.out.println("El cliente NO puede pedir peliculas");
         }
+        System.out.println("Multa actual: $"+multaAcumulada);
+        System.out.println();
+
+        
     }
 
 
@@ -114,6 +115,14 @@ public class Cliente extends Persona
 
     public void setCantAtrasos(int cantAtrasos){
         this.cantAtrasos = cantAtrasos;
+    }
+
+    public int getEdad(){
+        return edad;
+    }
+
+    public void setEdad(int edad){
+        this.edad = edad;
     }
 
     public int getMaximoPeliculas(){

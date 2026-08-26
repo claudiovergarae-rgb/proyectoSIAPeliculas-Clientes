@@ -14,9 +14,9 @@ public class Encargado extends Persona
         turno = "";
     }
     
-    public Encargado(String nombre, String rut, int edad, double sueldoBase, String idEmpleado, String turno)
+    public Encargado(String nombre, String rut, double sueldoBase, String idEmpleado, String turno)
     {
-        super(nombre, rut, edad);
+        super(nombre, rut);
         this.sueldoBase = sueldoBase;
         this.idEmpleado = idEmpleado;
         this.turno = turno;
@@ -38,8 +38,34 @@ public class Encargado extends Persona
 
         }
     }
-
-
-
+    
+    
     //getter y setter
+    
+	public double getSueldoBase() {
+		return sueldoBase;
+	}
+
+	public void setSueldoBase(double sueldoBase) {
+		this.sueldoBase = sueldoBase;
+	}
+
+	public String getIdEmpleado() {
+		return idEmpleado;
+	}
+
+	public void setIdEmpleado(String idEmpleado) {
+		this.idEmpleado = idEmpleado;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
+
+
+    
 }
